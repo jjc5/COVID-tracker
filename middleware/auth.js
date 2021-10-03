@@ -10,7 +10,6 @@ function auth(req, res, next) {
   if(!token) {
     res.status(401).json({ message: 'No token, authorization denied' })
   }
-
   try{
     //Verify token
     const decoded = jwt.verify(token, SECRET);
